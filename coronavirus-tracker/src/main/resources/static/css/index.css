@@ -1,0 +1,10 @@
+.Search {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    position: relative;
+    width: 100%;
+}
+
+.search-button svg{color:rgba(108,117,125,.6);left:.75rem;position:absolute;top:4.15rem;transition:all .2s ease-in-out}
+.search-button.is-expand svg{left:.5rem}

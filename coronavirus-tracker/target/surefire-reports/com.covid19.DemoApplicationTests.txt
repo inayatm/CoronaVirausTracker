@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: com.covid19.DemoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 9.002 s <<< FAILURE! - in com.covid19.DemoApplicationTests
+contextLoads  Time elapsed: 0.06 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'homeController' defined in file [E:\Inayath\playground\Dev\java\Practise JAVA\Covid19\coronavirus-tracker\target\classes\com\covid19\controllers\HomeController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.covid19.controllers.HomeController]: Constructor threw exception; nested exception is java.lang.NullPointerException
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.covid19.controllers.HomeController]: Constructor threw exception; nested exception is java.lang.NullPointerException
+Caused by: java.lang.NullPointerException
+
