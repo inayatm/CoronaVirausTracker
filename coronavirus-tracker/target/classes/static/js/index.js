@@ -15,45 +15,5 @@ console.log("index.jsss");
 	});
 
 });
-	
-//	$.ajax({
-//		
-//        url: "home",
-//        contentType: "application/json",
-//        dataType: 'json',
-//        success: function(data){
-//        	alert();
-//        	if(data.responseStatus===200)
-//            console.log(data);
-//        
-//        },
-//	failure:function(data){
-//		alert();
-//		console.log(data);
-//	}
-//    });
-	
-
-//});
-//
-//$('.popover-dismiss').popover({
-//	  trigger: 'focus'
-//	});
-//	
-//$('#searchfield').keyup(function(){
-//	
-//	var key=$(".form-control").val();
-//	$.ajax({
-//        url: "searchKey?key=" + key,
-//        contentType: "application/json",
-//        dataType: 'json',
-//        success: function(data){
-//            console.log(data);
-//            
-//        }
-//    });
-//	
-//	});
-
 
 	

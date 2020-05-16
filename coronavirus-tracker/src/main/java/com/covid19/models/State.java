@@ -1,15 +1,32 @@
 package com.covid19.models;
 
 
-public class State {
+import java.util.Arrays;
+import java.util.List;
 
-	private int negative; 
-	private int numcallsstatehelpline;
-	private int numicubeds;
-	private int numisolationbeds;
-	private int numventilators;
-	private int populationsourceuidai;
-	private int positive;
-   
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class State {
+	
+   @JsonProperty("states_tested_data")
+	private List<StateTestedData> statedata;
+
+public List<StateTestedData> getStatedata() {
+	return statedata;
+}
+
+public void setStatedata(List<StateTestedData> statedata) {
+	this.statedata = statedata;
+}
+
+@Override
+public String toString() {
+	return "State [statedata=" + statedata + "]";
+}
+
+
+	
 	
 }
