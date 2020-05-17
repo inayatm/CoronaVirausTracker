@@ -14,6 +14,8 @@ import javax.annotation.PostConstruct;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -28,9 +30,8 @@ public class CoronaVirusDataService {
   @PostConstruct
   @Scheduled(cron="* * 1 * * *")
   public void fetchVirusData() throws IOException, InterruptedException{
-	  System.out.println("Service calling..");
-	  
-	  
+	  Logger log=LoggerFactory.getLogger(CoronaVirusDataService.class);
+	  log.info("Fetching data from external csv file");
 	  HttpClient client=HttpClient.newHttpClient();
 	  HttpRequest request=HttpRequest.newBuilder()
 			  						.uri(URI.create(DATA_VIRUS_URL))
@@ -54,7 +55,7 @@ public class CoronaVirusDataService {
 		  locationstat.setChangeSinceLastDay(changeSinceLastDay);
 		  
 		  if(locationstat.getCountry().equals("India"))		  
-		  System.out.println(locationstat);
+		  log.debug("Indian data: " +locationstat);
 		  
 		  newstats.add(locationstat);
 	   
