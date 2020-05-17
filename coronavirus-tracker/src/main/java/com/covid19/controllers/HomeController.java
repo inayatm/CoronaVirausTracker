@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
-import java.util.stream.Collectors;
 
 import  org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,14 +24,9 @@ public class HomeController {
 	
 	@Autowired
 	 CoronaVirusDataService dataservice;
-	
-
     private List<LocationStats> alllocstats;
     List<LocationStats> matchedCountries ;
-    
-    //=  dataservice.getListofLocationStat();
-
-	
+    	
 	@GetMapping("/home")
 	public String home(Model model) {
 		
@@ -52,7 +46,7 @@ try {
 		model.addAttribute("totalNoOfcases",numberformat.format(totalNoOfcases));
 		String diffSinceLastDay=alllocstats.stream().mapToInt(mapper->mapper.getChangeSinceLastDay()).toString();
 		model.addAttribute("changeSinceLastDay",diffSinceLastDay);
-		
+		LOGGER.info("Rendering home view");
 		return "home";
 	}
 
